@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Book List</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f8f9fa;
+      }
+      .container {
+        max-width: 800px;
+        margin: 20px auto;
+        padding: 20px;
+        background-color: #fff;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+      h1 {
+        text-align: center;
+        color: #007bff;
+      }
+      ul {
+        list-style-type: none;
+        padding: 0;
+      }
+      li {
+        margin-bottom: 20px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        padding: 20px;
+      }
+      h2 {
+        margin-top: 0;
+      }
+      p {
+        margin: 0;
+      }
+      .author {
+        font-weight: bold;
+      }
+      .price {
+        font-style: italic;
+        color: #007bff;
+      }
+      nav {
+        background-color: #007bff;
+        color: white;
+        padding: 10px 20px;
+        text-align: center;
+      }
+      nav a {
+        color: white;
+        text-decoration: none;
+        margin-right: 20px;
+      }
+      nav a:hover {
+        text-decoration: underline;
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <a href="/">Trang chủ</a>
+      <a href="/books">Sách</a>
+      <a href="/phones">Điện thoại</a>
+      <a href="/clothes">Quần áo</a>
+      <a href="/cart">Giỏ hàng</a>
+    </nav>
+    <div class="container">
+      <h1>Trang chủ</h1>
+      <ul>
+        {% for book in books %}
+        <li>
+          <h2>{{ book.title }}</h2>
+          <p class="author"><strong>Author:</strong> {{ book.author }}</p>
+          <p><strong>Description:</strong> {{ book.des }}</p>
+          <p class="price"><strong>Price:</strong> {{ book.price }}</p>
+        </li>
+        {% endfor %}
+      </ul>
+    </div>
+  </body>
+</html>
